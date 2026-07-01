@@ -487,6 +487,16 @@ body{
 
 }
 
+
+.hero-ann{margin:20px;padding:18px 22px;border-radius:20px;background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;position:relative;overflow:hidden}
+.hero-ann:after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.25),transparent);animation:shine 3s linear infinite}
+@keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.ticket-card{transition:.3s}.ticket-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.ticket-card.batch{overflow:visible}
+.batch-tag{position:absolute;top:-10px;right:18px;background:#22c55e;color:#fff;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;z-index:5;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.status.onsale{background:#fff4d6;color:#b45309;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.05)}}
+.stock-note{font-size:13px;color:#d97706;font-weight:700;margin-top:6px}
 </style>
 </head>
 
@@ -546,6 +556,7 @@ body{
     <img src="banner-never.jpg" alt="Banner Event">
 </div>
 
+<div class="hero-ann"><h2>🎉 KUOTA TIKET TAMBAHAN RESMI DIBUKA</h2><p>Karena tingginya antusiasme, panitia membuka kuota tambahan dalam jumlah terbatas. Segera amankan tiket sebelum kembali habis.</p></div>
 <!-- ================= CATEGORY ================= -->
 
 <div class="category-title">
@@ -564,7 +575,8 @@ body{
 
     <!-- PRESALE FESTIVAL -->
 
-    <div class="ticket-card">
+    <div class="ticket-card batch">
+<div class="batch-tag">NEW BATCH</div>
 
         <div class="ticket-top">
 
@@ -713,7 +725,7 @@ body{
 
     <!-- PRESALE 2 VIP -->
 
-    <div class="ticket-card">
+    <div class="ticket-card batch"><div class="batch-tag">NEW BATCH</div>
 
         <div class="ticket-top">
 
