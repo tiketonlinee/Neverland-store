@@ -888,14 +888,22 @@ function buyNow(){
 
     btn.disabled = true;
 
-    setTimeout(() => {
+    localStorage.setItem(
+        "checkout_items",
+        JSON.stringify(items)
+    );
 
-        window.location.href =
-        "form.html";
+    localStorage.setItem(
+        "totalPembayaran",
+        total
+    );
 
-    },3000);
+    localStorage.setItem(
+        "jumlahTiket",
+        jumlah
+    );
 
-}
+    window.location.href="form.html";
 
 </script>
 
