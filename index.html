@@ -878,20 +878,58 @@ function updateUI(id){
     totalTicket <= 0;
 }
 
-function buyNow(){
-const btn=document.getElementById('buyBtn');
-btn.innerHTML='<div class="loader"></div>';btn.disabled=true;
-const items=[];
-if(qty.festival>0)items.push({nama:'PRESALE - FESTIVAL',qty:qty.festival,harga:140000});
-if(qty.vip>0)items.push({nama:'PRESALE 2 VIP',qty:qty.vip,harga:250000});
-const jenis=items.map(i=>i.nama+' x'+i.qty).join(', ');
-localStorage.setItem('checkout_items',JSON.stringify(items));
-localStorage.setItem('jenisTiket',jenis);
-localStorage.setItem('jumlahTiket',totalTicket);
-localStorage.setItem('totalPembayaran',total);
-window.location.href='form.html';
+<script>
+function buyNow() {
+
+    const btn = document.getElementById("buyBtn");
+
+    btn.innerHTML = '<div class="loader"></div>';
+    btn.disabled = true;
+
+    const items = [];
+
+    if (qty.festival > 0) {
+        items.push({
+            nama: "PRESALE - FESTIVAL",
+            qty: qty.festival,
+            harga: 140000
+        });
+    }
+
+    if (qty.vip > 0) {
+        items.push({
+            nama: "PRESALE 2 VIP",
+            qty: qty.vip,
+            harga: 250000
+        });
+    }
+
+    const jenisTiket = items
+        .map(item => `${item.nama} x${item.qty}`)
+        .join(", ");
+
+    localStorage.setItem(
+        "checkout_items",
+        JSON.stringify(items)
+    );
+
+    localStorage.setItem(
+        "jenisTiket",
+        jenisTiket
+    );
+
+    localStorage.setItem(
+        "jumlahTiket",
+        totalTicket
+    );
+
+    localStorage.setItem(
+        "totalPembayaran",
+        total
+    );
+
+    window.location.href = "form.html";
 }
 </script>
-
 </body>
 </html>
